@@ -6,44 +6,47 @@ if(!defined("_APP_ENTRY_")) {
     exit();
 }
 
-/* require area*/
+/* require*/
 require_once("config/appConfig.php");
-require_once("resource/php/include.php");
+require_once("modules/Application/Module.php");
+require_once("global/php/include.php");
 /***************/
 
+use \Application\Module;
+use \Library\CPDO;
+
 class Application {
+    public static function Config() {
+        global $mPDO;
+        global $appConfig;
+        
+        //Config Database
+        $dsn = $user = $pass = "";
+        if(isset($appConfig['db_config']['dsn'])) {
+            $dsn = $appConfig['db_config']['dsn'];
+        }
+        if(isset($appConfig['db_config']['user'])) {
+            $user = $appConfig['db_config']['user'];
+        }
+        if(isset($appConfig['db_config']['pass'])) {
+            $pass = $appConfig['db_config']['pass'];
+        }
+        if(!empty($dsn) && !empty($user) && !empty($pass)) {
+            $mPDO = new CPDO($dsn, $user, $pass);
+        }
+    }
+    
     public static function Run() {
         global $mResponse;
-        global $modConfig;
         
-        $modConfig["module"] = $module = $mResponse->GetResponse("module");
+        self::Config();
+        
+        $module = $mResponse->GetResponse("module");
         $action = $mResponse->GetResponse("action");
-        $view   = $mResponse->GetResponse("view");
         
-        if(!empty($action)) {
-            $action_path = "modules/$module/controller/$action.php";  
-
-            if(file_exists($action_path)) {
-                $modConfig["action"] = $action;
-                
-                require_once($action_path);
-            } else {
-
-                header("HTTP 1.0 404 Not Found");
-                exit();
-            }
-        }
-        if(!empty($view)) {
-            $view_path = "modules/$module/view/$view.php";
-            if(file_exists($view_path)) {
-                $modConfig["view"] = $view;
-                require_once($view_path);
-            } else {
-                header("HTTP 1.0 404 Not Found");
-                exit();
-            }
-        }
-        exit();
+        Module::Config($module, $action);
+        
+        Module::Run();
     }
 }
 

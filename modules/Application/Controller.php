@@ -7,26 +7,32 @@ if(!defined("_APP_ENTRY_")) {
     exit();
 }
 
-class Application_Controller {
-    private $mFile = "";
+class Controller {
     
-    public function UploadFile($file, $tmp = false) {
-        $ret ="";
-        $target_dir = "uploads/";
-        if($tmp) { $target_dir .= "tmp/"; }
-        if(!file_exists($target_dir)) {
-            mkdir($target_dir);
-        } 
-        $this->mFile = $target_file = $target_dir . basename($_FILES[$file]["name"]);
-        if(move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)) {
-            $ret = $this->mFile;
-        }    
-        return $ret;
+    public function __construct() {
+    
     }
-    public function RemoveUploadFile() {
-        if(file_exists($this->mFile)) {
-            unlink($this->mFile);
+    protected function PreProcess() {
+        global $modConfig;
+        
+        $ret = true;
+        //if(isset($modConfig['CRSF_error']) && $modConfig['CRSF_error']) { $ret = false; }
+        return true;
+    }
+    protected function PostProcess() {}
+    protected function Processing() {}
+    
+    
+    public function Process() {
+        //Checking Before Process
+        if(!$this->PreProcess()) {
+            return;
         }
+        
+        $this->Processing();
+        
+        //Fine Tuning After Process
+        $this->PostProcess();
     }
 }
 

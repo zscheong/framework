@@ -7,40 +7,24 @@ if(!defined("_APP_ENTRY_")) {
     exit();
 }
 
-require_once "resource/php/raintpl/rain.tpl.class.php";
-
-use \Library\Common;
-
-class Application_View {
-    
-    private $mTpl;
-    private $mModule;
-    private $mView;
-    
-    public function __construct($module, $view) {
-        $this->mModule = $module;
-        $this->mView = $view;
-  
-        require_once("modules/$module/view/config.php");
+class View {
+    public function Display($layout = '') {
+        global $appConfig, $modConfig, $mResponse;
         
-        \raintpl::configure("base_url", null);
-        \raintpl::configure("tpl_dir", null);
-        \raintpl::configure("cache_dir", "layout/tmp/"); 
-        $this->mTpl = new \RainTPL;
-        $this->SetVar('module', $module);
-        $this->SetVar('view', $view);
-    }
-    public function SetVar($name, $value) {
-        $this->mTpl->assign($name, $value);
-    }
-    public function Show($page) {
-        global $modConfig;
+        $modConfig['js'][] = $appConfig['doc_dir'] . 'global/directive/AppModule.js';
+        require_once($appConfig['app_dir'] . 'global/html/header.inc');
         
-        $module = $this->mModule;
-        $this->SetVar("include_css", Common::IncludeCSS($modConfig['include_css']));
-        $this->SetVar("include_js", Common::IncludeJS($modConfig['include_js']));
-        $html = $this->mTpl->draw("layout/tpl/$module/$page", $return_string = true);
-        echo $html;
+        $file_path = $modConfig['mod_dir'] . 'view/' . $layout;
+        if(!empty($layout) && file_exists($file_path)) {
+            require_once($file_path);
+        } else {
+            $file_path = $mod['mod_dir'] . 'view/app.inc';
+            if(file_exists($file_path)) {
+                require_once($file_path);
+            }
+        }
+        require_once($appConfig['app_dir'] . 'global/html/footer.inc');
     }
 }
+
 ?>
