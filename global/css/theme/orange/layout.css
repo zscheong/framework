@@ -1,0 +1,27 @@
+.headBand {
+    background: coral;
+    height: 100px;
+}
+.menuBand {
+    background: #333;
+    height: 50px;
+    /*border: 1px solid white;*/
+}
+.menuFont {
+    border-spacing: 0px;
+}
+.menuFont>a {
+    display: inherit;
+    vertical-align: middle;
+    text-decoration: none;
+    border-left: 1px solid greenyellow;
+    border-right: 1px solid #d4d4d4;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+.menuFont>a:hover {
+    color: blue;
+    background: orange;
+}

@@ -1,0 +1,86 @@
+2015-04-18 10:31:00	Compare Upload
+Array
+(
+)
+2015-04-18 10:36:00	Compare Upload
+Array
+(
+)
+2015-04-18 10:49:55	Compare Upload
+Array
+(
+)
+2015-04-18 11:08:26	Compare Upload
+Array
+(
+)
+2015-04-18 11:09:28	Compare Upload
+Array
+(
+)
+2015-04-18 18:13:03	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpE494.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpE495.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-18 18:14:18	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php993.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php994.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-18 18:35:49	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpBC31.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpBC32.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)

@@ -8,6 +8,9 @@ if(!defined("_APP_ENTRY_")) {
 }
 
 class View {
+    public function DefaultView() {
+        
+    }
     public function Display($layout = '') {
         global $appConfig, $modConfig, $mResponse;
         
@@ -18,7 +21,7 @@ class View {
         if(!empty($layout) && file_exists($file_path)) {
             require_once($file_path);
         } else {
-            $file_path = $mod['mod_dir'] . 'view/app.inc';
+            $file_path = $modConfig['mod_dir'] . 'view/app.inc';
             if(file_exists($file_path)) {
                 require_once($file_path);
             }

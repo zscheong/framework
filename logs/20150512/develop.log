@@ -1,0 +1,120 @@
+2015-05-12 10:53:53	Model save
+Array
+(
+    [query] => insert into test_user (first_name, last_name, email) values (?,?,?)
+)
+2015-05-12 10:55:10	Model save
+Array
+(
+    [query] => insert into test_user (first_name, last_name, email) values (?,?,?)
+    [value] => Array
+        (
+            [0] => Cheong
+            [1] => Zee Swee
+            [2] => zscheong@gmail.com
+        )
+
+    [result] => Array
+        (
+        )
+
+)
+2015-05-12 11:08:07	Model save
+Array
+(
+    [query] => insert into test_user (first_name, last_name, email) values (?,?,?)
+    [value] => Array
+        (
+            [0] => Cheong
+            [1] => Zee Swee
+            [2] => zscheong@gmail.com
+        )
+
+    [result] => Array
+        (
+            [status] => 1
+            [result] => 
+        )
+
+)
+2015-05-12 11:15:59	Model save
+Array
+(
+    [query] => select first_name, last_name, email from test_user
+    [where] => Array
+        (
+        )
+
+)
+2015-05-12 11:19:26	Model read
+Array
+(
+    [query] => select first_name, last_name, email from test_user
+    [where] => Array
+        (
+            [query] => id=?
+            [value] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+2015-05-12 11:20:30	Model save
+Array
+(
+    [query] => insert into test_user (first_name, last_name, email) values (?,?,?)
+    [value] => Array
+        (
+            [0] => Cheong
+            [1] => Zee Swee
+            [2] => zscheong22@gmail.com
+        )
+
+    [result] => Array
+        (
+            [status] => 1
+            [result] => 
+        )
+
+)
+2015-05-12 11:20:40	Model read
+Array
+(
+    [query] => select first_name, last_name, email from test_user
+    [where] => Array
+        (
+            [query] => id=?
+            [value] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+2015-05-12 11:20:50	Model read
+Array
+(
+    [query] => select first_name, last_name, email from test_user
+    [where] => Array
+        (
+            [query] => id=?
+            [value] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+2015-05-12 11:20:58	Model read
+Array
+(
+    [query] => select first_name, last_name, email from test_user
+    [where] => Array
+        (
+        )
+
+)

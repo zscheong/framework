@@ -1,0 +1,220 @@
+2015-04-27 06:27:00	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpBBE1.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpBBF2.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 06:31:31	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpE209.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpE20A.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 06:32:45	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php19C.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php19D.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 06:38:24	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php2D40.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php2D41.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 06:41:24	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpEDA3.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpEDA4.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 06:42:40	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php16A8.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php16A9.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 06:43:24	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpC34D.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpC34E.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 11:49:57	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php6686.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php6687.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 11:49:58	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php6E84.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\php6E85.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)
+2015-04-27 11:50:23	Compare Upload
+Array
+(
+    [reference] => Array
+        (
+            [name] => reference.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpD044.tmp
+            [error] => 0
+            [size] => 9063
+        )
+
+    [input] => Array
+        (
+            [name] => input.xlsx
+            [type] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            [tmp_name] => C:\xampp\tmp\phpD055.tmp
+            [error] => 0
+            [size] => 10508
+        )
+
+)

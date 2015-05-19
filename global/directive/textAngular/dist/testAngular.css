@@ -1,0 +1,18 @@
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+.ta-hidden-input {
+    width:1px;
+    height:1px;
+    border:none;
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    top:-10000;
+    left:-10000;    
+}
+.ta-toolbar { margin: 4px 0px;}

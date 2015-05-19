@@ -1,0 +1,69 @@
+/*For input effect*/
+.bar { position: relative; display: block; }
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #b7deed;
+    transition: 0.2s ease all;
+}
+.bar:before { left: 50%; }
+.bar:after { right: 50%; }
+.input-anim:focus ~ .bar:before, .input-anim:focus ~ .bar:after {
+    width: 50%;
+}
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+.input-anim:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+@-webkit-keyframes inputHighlighter {
+    from { background: #aaaaaa; }
+    to { width: 0; background: transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background: #aaaaaa; }
+    to { width: 0; background: transparent; }
+}
+@keyframes inputHighlighter {
+    from { background: #aaaaaa; }
+    to { width: 0; background: transparent; }
+}
+.input-anim { 
+    float: none !important;
+    z-index: 0 !important;
+}
+
+
+/*For ripple effect*/
+.grow {
+    transform: scale(1.05) !important;
+}
+.notransition {
+    transition: none !important;
+}
+.ripple-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-out !important;
+}
+.ripple {
+    background: rgba(0,0,0,0.05);
+    position: absolute;
+    border-radius: 100%;
+    width: 0;
+    height: 0;
+    transition: all 0.3s ease-out;
+}

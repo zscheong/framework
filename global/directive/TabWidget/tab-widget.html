@@ -1,0 +1,22 @@
+<!--
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li ng-repeat="pane in panes" ng-class="{active:pane.selected}">
+            <a href="" ng-click="select(pane)">{{pane.title}}</a>
+        </li>
+    </ul>
+    <div class="tab-content" ng-transclude></div>
+</div>
+-->
+
+<div class="tabwidget">
+    <div class="tab-nav-list container-fluid">
+        <div class="row">
+            <div class="col-xs-2 tab-nav" ng-repeat="pane in panes">
+                <button type="button" ng-click="select(pane)" class="btn btn-default btn-block" ng-class="{'active btn-info':pane.selected}">{{pane.title}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" ng-transclude></div>
+    <div class='tab-space'></div>
+</div>
