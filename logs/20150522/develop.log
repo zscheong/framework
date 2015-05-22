@@ -1,0 +1,47 @@
+2015-05-22 06:25:56	Create Function
+Array
+(
+    [PUT] => Array
+        (
+            [fullname] => new user
+        )
+
+    [GET] => Array
+        (
+        )
+
+    [Route] => Array
+        (
+            [id] => 
+        )
+
+    [POST] => Array
+        (
+        )
+
+)
+2015-05-22 06:25:56	Update Function
+Array
+(
+    [PUT] => Array
+        (
+            [first_name] => Cheong
+            [last_name] => Zee Swee
+            [fullname] => cheong zee swee
+            [method] => update
+        )
+
+    [GET] => Array
+        (
+        )
+
+    [Route] => Array
+        (
+            [id] => 
+        )
+
+    [POST] => Array
+        (
+        )
+
+)
