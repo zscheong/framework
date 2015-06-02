@@ -1,0 +1,1 @@
+vendor\bin\phpunit --bootstrap test\includes\autoload.php test\includes\
