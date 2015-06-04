@@ -1,4 +1,5 @@
 <?php
+
 namespace Application;
 
 if(!defined("_APP_ENTRY_")) {
@@ -6,41 +7,36 @@ if(!defined("_APP_ENTRY_")) {
     exit();
 }
 
-/* require*/
-require_once("config/appConfig.php");
-require_once("global/php/include.php");
-require_once("modules/Application/Module.php");
+require_once("config/sys_config.php");
+require_once("includes/php/include.php");
+require_once('Route.php');
 
-/***************/
+use \includes\php\CPDO;
 
-//use \Application\Module;
-use \Library\CPDO;
-//use \Application\CURLParser;
-
-class Application {
-    public static function Config() {
-        global $mPDO;
-        global $appConfig;
+class Application 
+{
+    public static function config() 
+    {
+        global $global_pdo;
+        global $sys_config;
         
-        //Config Database
-        $dsn = $user = $pass = "";
-        if(isset($appConfig['db_config']['dsn'])) {
-            $dsn = $appConfig['db_config']['dsn'];
-        }
-        if(isset($appConfig['db_config']['user'])) {
-            $user = $appConfig['db_config']['user'];
-        }
-        if(isset($appConfig['db_config']['pass'])) {
-            $pass = $appConfig['db_config']['pass'];
-        }
-        if(!empty($dsn) && !empty($user) && !empty($pass)) {
-            $mPDO = new CPDO($dsn, $user, $pass);
+        //config Database        
+        if(isset($sys_config['db']['dsn']) && isset($sys_config['db']['user']) 
+                && isset($sys_config['db']['pass'])) {
+            $global_pdo = new CPDO($sys_config['db']['dsn'], $sys_config['db']['user'], 
+                    $sys_config['db']['pass']);
         }
     }
     
-    public static function Run() {
+    public static function Run() 
+    {
         global $appConfig;
         global $mURLParser;
+        
+        self::config();
+        $route = new Route();
+        $route->route();
+        
         
         $module = $mURLParser->GetModule();
         
@@ -71,7 +67,6 @@ class Application {
 //        
 //        $parser = new CURLParser();
 //    }
-    
     
 }
 

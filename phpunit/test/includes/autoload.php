@@ -6,7 +6,8 @@ function autoloadMap($class) {
     
     $map = array('includes\\php\\cpdo' => '/../framework/includes/php/CPDO.php',
                     'includes\\php\\curlparser' => '/../framework/includes/php/CURLParser.php',
-                    'includes\\php\\carrayutils' => '/../framework/includes/php/CArrayUtils.php'
+                    'includes\\php\\carrayutils' => '/../framework/includes/php/CArrayUtils.php',
+                    'includes\\php\\cstringutils' => '/../framework/includes/php/CStringUtils.php'
         );
     
     $cn = strtolower($class);
