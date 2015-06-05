@@ -22,6 +22,7 @@
         });
         
         this.click(function(e) {
+            e.stopPropagation();
             var $this = $(this);
             
             var offset = $this.offset();
@@ -34,16 +35,25 @@
             $ripple.css({left: relativeX, top: relativeY});
             $ripple.removeClass('notransition');
             
-            $this.addClass('grow');
+            if($this.hasClass('.btn')) {
+                $this.addClass('grow');
+            }
             $ripple.css({"width": width * 2, "height": width * 2, "margin-left": -width, "margin-top": -width});
             
             setTimeout(function() {
-               $ripple.addClass('notransition'); 
-               $ripple.attr("style", "");
-               $ripple[0].offsetHeight;
-               $this.removeClass('grow');
-               $ripple.removeClass('notransition');
+                $ripple.addClass('notransition'); 
+                $ripple.attr("style", "");
+                $ripple[0].offsetHeight;
+                if($this.hasClass('.btn')) {
+                    $this.removeClass('grow');
+                }
+                $ripple.removeClass('notransition');
             }, 300);
         });
     };
 })(jQuery, window);
+
+$(document).ready(function() {
+    $('.btn, .panel').jclick();
+    $('.input-click').jinput();
+});

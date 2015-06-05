@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Module;
+namespace Application;
 
 if(!defined("_APP_ENTRY_")) {
     header("HTTP 1.0 404 Not Found");
@@ -12,16 +12,8 @@ class Controller
     protected $mParams = array();
     protected $mKeyFields = array();
     
-    public function __construct() {}
-    
-    public function loadParams($params) 
-    {
-        $input = file_get_contents('php://input');
-        if(CUtils::IsJSON($input)) {
-            $input = json_decode($input);
-        }
-        
-        $this->mParams = array_merge($params, $input, $_POST);
+    public function __construct($params) {
+        $this->mParams = $params;
     }
     
     public function manage() 

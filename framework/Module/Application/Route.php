@@ -45,19 +45,37 @@ class Route
         if(!in_array($action, $this->mBackendAction)) { 
             
             //generate token
-            $_SESSION['XSRF-TOKEN'] = CStringUitls::getRandomString(32);
-            setcookie('XSRF-TOKEN', $_SESSION['XSRF_TOKEN']);
+            $_SESSION['XSRF-TOKEN'] = CStringUtils::getRandomString(32);
+            setcookie('XSRF-TOKEN', $_SESSION['XSRF-TOKEN']);
         } else {
             $xsrf_token = $_SERVER['X-XSRF-TOKEN'];
-            if($xsrf_token != $_SESSION['XSRF_TOKEN']) {
+            if($xsrf_token != $_SESSION['XSRF-TOKEN']) {
                 header("HTTP 1.0 404 Invalid Request");
                 exit();
             }
         }
     }
     
+    private function gatherParams($params) {
+        $input = file_get_contents('php://input');
+        if(!empty($input) && CStringUtils::isJSON($input)) {
+            $input = json_decode($input);
+            $params = array_merge($params, $input);
+        }
+        if(!empty($_POST)) {
+            $params = array_merge($params, $_POST);
+        }
+        if(!empty($_GET)) {
+            $params = array_merge($params, $_GET);
+        }
+        
+        return $params;
+    }
+    
     public function route() 
     {
+        global $sys_config;
+        
         $this->preRoute();
         
         $module = $this->mURLParser->GetModule();
@@ -66,22 +84,29 @@ class Route
         $file = "";
         
         if(in_array($action, $this->mBackendAction)) {
-            $file = "./modules/$module/{$module}Controller.php";
-            $class = "\\Application\\Module\\{$module}Controller";
+            $file = "./Module/$module/{$module}Controller.php";
+            $class = "\\Application\\Module\\$module\\{$module}Controller";
         } else {
-            $file = "./modules/$module/{$module}View.php";
-            $class = "\\Application\\Module\\{$module}View";
+            $file = "./Module/$module/{$module}View.php";
+            $class = "\\Application\\Module\\$module\\{$module}View";
+        }
+
+        if(!file_exists($file)) {
+            header("HTTP 1.0 404 Not Found");
+            exit();
         }
         
         require_once($file);
-        $instance = new $class();
+        
+        $sys_config['mod_dir'] = "./Module/$module/";
+        $params = $this->gatherParams($this->mURLParser->GetHashValue());
+        
+        $instance = new $class($params);
         if(method_exists($instance, $action)) {
-            $params = $this->mURLParser->GetHashValue();
-            $instance->loadParams($params);
             $instance->$action();
         } else {
             header("HTTP 1.0 404 Not Found");
-             exit();
+            exit();
         }
     }
 }

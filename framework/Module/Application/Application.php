@@ -38,19 +38,19 @@ class Application
         $route->route();
         
         
-        $module = $mURLParser->GetModule();
-        
-        $index_file = $appConfig['app_dir'] . "modules/$module/index.php";
-        if(file_exists($index_file)) {
-            require_once($index_file);
-            
-            $class = "\\Application\\Module\\" . $module . "Index";
-            $mod_inst = new $class();
-            $mod_inst->Route();
-        } else {
-            header("HTTP 1.0 404 Not Found");
-            exit();
-        }
+//        $module = $mURLParser->GetModule();
+//        
+//        $index_file = $appConfig['app_dir'] . "modules/$module/index.php";
+//        if(file_exists($index_file)) {
+//            require_once($index_file);
+//            
+//            $class = "\\Application\\Module\\" . $module . "Index";
+//            $mod_inst = new $class();
+//            $mod_inst->Route();
+//        } else {
+//            header("HTTP 1.0 404 Not Found");
+//            exit();
+//        }
     }
     
 //    public static function Run() {

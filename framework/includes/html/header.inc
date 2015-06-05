@@ -2,43 +2,38 @@
 <html>
     <head>
         <meta charset='utf-8'/>
-        <title><?=$modConfig['module'] . ' - ' . $modConfig['view']?></title>
+        <title>Application</title>
         
-        <link rel="stylesheet" href='<?=$appConfig['doc_dir'].'global/js/bootstrap/css/bootstrap.min.css'?>'>
-        <link rel="stylesheet" href='<?=$appConfig['doc_dir'].'global/css/general.css'?>'>
-        <link rel="stylesheet" href='<?=$appConfig['doc_dir'].'global/js/jext/jclick.css'?>'>
+        <link rel="stylesheet" href='<?=$sys_config['url_include'].'includes/js/bootstrap/css/bootstrap.min.css'?>'>
+        <link rel="stylesheet" href='<?=$sys_config['url_include'].'includes/css/general.css'?>'>
+        <link rel="stylesheet" href='<?=$sys_config['url_include'].'includes/js/jext/janim.css'?>'>
         
-        <script src='<?=$appConfig['doc_dir'] . 'global/js/jquery/jquery.js'?>'></script>
-        <script src='<?=$appConfig['doc_dir'] . 'global/js/bootstrap/js/bootstrap.min.js'?>'></script>
-        <script src='<?=$appConfig['doc_dir'] . 'global/js/angular/lib/angular.min.js'?>'></script>
-        <script src='<?=$appConfig['doc_dir'] . 'global/js/angular/lib/angular-animate.min.js'?>'></script>
+        <script src='<?=$sys_config['url_include'] . 'includes/js/jquery/jquery.js'?>'></script>
+        <script src='<?=$sys_config['url_include'] . 'includes/js/bootstrap/js/bootstrap.min.js'?>'></script>
+        <script src='<?=$sys_config['url_include'] . 'includes/js/angular/lib/angular.min.js'?>'></script>
+        <script src='<?=$sys_config['url_include'] . 'includes/js/angular/lib/angular-animate.min.js'?>'></script>
+               
+        <script src='<?=$sys_config['url_include'] . 'includes/app/app.js'?>'></script>
         
-        <script src='<?=$appConfig['doc_dir'] . 'global/js/jext/jclick.js'?>'></script>
-        
-        
+        <script src='<?=$sys_config['url_include'] . 'includes/js/jext/janim.js'?>' defer></script>
+               
 <?php
-    if(isset($modConfig['css']) && !empty($modConfig['css'])) {
-        foreach ($modConfig['css'] as $script) {
+    if(isset($sys_config['css']) && !empty($sys_config['css'])) {
+        foreach ($sys_config['css'] as $script) {
 ?>
         <link type='text/css' href='<?=$script?>'>
 <?php
         }
     }
-    if(isset($modConfig['js']) && !empty($modConfig['js'])) {
-        foreach ($modConfig['js'] as $script) {
+    if(isset($sys_config['js']) && !empty($sys_config['js'])) {
+        foreach ($sys_config['js'] as $script) {
 ?>        
         <script src='<?=$script?>'></script>
 <?php
         }
     }
 ?>
-        <script>
-            $(document).ready(function() {
-                $('.btn').jclick();
-                $('.input-click').jinput();
-            });
-        </script>
     </head>
-    <body>
-    <?php require_once($appConfig['doc_dir'] . 'global/html/nav-bar.inc');?>
+    <body ng-app='AppModule'>
+    <?php require_once($sys_config['doc_dir'] . 'includes/html/nav-bar.inc');?>
         

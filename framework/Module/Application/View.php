@@ -7,26 +7,46 @@ if(!defined("_APP_ENTRY_")) {
     exit();
 }
 
-class View {
-    public function DefaultView() {
-        
+class View
+{
+    protected $mParams = array();
+    protected $mInvoke = '';
+    
+    public function __construct($params) 
+    {
+        $this->mParams = $params;
     }
-    public function Display($layout = '') {
-        global $appConfig, $modConfig, $mResponse;
-        
-        $modConfig['js'][] = $appConfig['doc_dir'] . 'global/directive/AppModule.js';
-        require_once($appConfig['app_dir'] . 'global/html/header.inc');
-        
-        $file_path = $modConfig['mod_dir'] . 'view/' . $layout;
-        if(!empty($layout) && file_exists($file_path)) {
-            require_once($file_path);
-        } else {
-            $file_path = $modConfig['mod_dir'] . 'view/app.inc';
-            if(file_exists($file_path)) {
-                require_once($file_path);
-            }
+    
+    public function checkView()
+    {
+        if(!isset($this->mParams['viewOn'])) {
+            header("HTTP 1.0 404 Not Found");
+            exit(); 
         }
-        require_once($appConfig['app_dir'] . 'global/html/footer.inc');
+        $this->mInvoke = 'show'.$this->mParams['viewOn'];
+        if(!method_exists($this, $this->mInvoke)) {
+            header("HTTP 1.0 404 Not Found");
+            exit();
+        }
+    }
+    
+    public function get() 
+    {
+        $this->checkView();
+        $invoke = $this->mInvoke;
+        $this->$invoke();
+    }
+    
+    public function show() 
+    {
+        global $sys_config;
+        
+        $this->checkView();
+        
+        $invoke = $this->mInvoke;
+        require_once($sys_config['doc_dir'] . 'includes/html/header.inc');
+        $this->$invoke();
+        require_once($sys_config['doc_dir'] . 'includes/html/footer.inc');
     }
 }
 
