@@ -1,0 +1,1 @@
+karma start test\angular\config.js

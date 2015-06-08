@@ -1,0 +1,6 @@
+{
+    "require": {
+        "fxp/composer-asset-plugin": "1.0.0",
+        "phpunit/phpunit": "4.6.*"
+    }
+}
