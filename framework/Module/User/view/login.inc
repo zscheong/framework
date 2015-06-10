@@ -1,3 +1,6 @@
+<script src='includes/directive/NavBarWidget/NavBarWidget.js'></script>
+
+<nav-bar template="material"></nav-bar>
 <h2>Login</h2>
 
 <div class='container-fluid'>

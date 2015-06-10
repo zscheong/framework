@@ -1,35 +1,22 @@
 <?php
 
-namespace Application\Module;
+namespace Application\Module\UnitTest;
 
 if(!defined("_APP_ENTRY_")) {
     header("HTTP 1.0 404 Not Found");
     exit();
 }
-require_once('modules/Application/View.php');
+require_once('Module/Application/View.php');
 
 use \Application\View;
 
 class UnitTestView extends View
 {
-  /*
-    protected $mDefaultStep = 'ShowSimple';
-    
-    public function stepShowSimple() {
-        global $modConfig;
-
-        $message = (isset($modConfig['message']))? $modConfig['message'] : "";
+    public function showNavBar() {
+        global $sys_config;
         
-        $this->SetVar('message', $message);
-        $this->Show('simple_template');
-    }
-   
-   */
-    public function Display($layout='') {
-        global $modConfig;
-        
-        //$modConfig['active'] = 'Profile';
-        parent::Display($layout);
+        $params = $this->mParams;
+        require_once($sys_config['mod_dir'] . 'view/navbar.inc');
     }
 }
 

@@ -22,8 +22,13 @@ module.exports = function(config) {
     files: [
         '../../../framework/includes/js/angular/lib/angular.js',
         '../../../framework/includes/js/angular/lib/angular-mocks.js',
+        '../../../framework/includes/js/jquery/jquery.js',
+        '../../../framework/includes/js/jext/jutils.js',
         '../../../framework/includes/app/app.js',
+        '../../../framework/includes/directive/NavBarWidget/NavBarWidget.js',
+         '../../../framework/includes/directive/NavBarWidget/templates/*.html',
         '*Test.js'
+       
     ],
 
 
@@ -35,7 +40,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'templates/*.html':['ng-html2js'] 
+        '../../../framework/includes/directive/NavBarWidget/templates/*.html':['ng-html2js'] 
     },
 
 
@@ -69,6 +74,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
+
   });
 };

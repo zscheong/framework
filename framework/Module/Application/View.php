@@ -44,6 +44,8 @@ class View
         $this->checkView();
         
         $invoke = $this->mInvoke;
+        $params = $this->mParams;
+        $params['module'] = $this->mModule;
         require_once($sys_config['doc_dir'] . 'includes/html/header.inc');
         $this->$invoke();
         require_once($sys_config['doc_dir'] . 'includes/html/footer.inc');

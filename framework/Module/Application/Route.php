@@ -103,6 +103,7 @@ class Route
         
         $instance = new $class($params);
         if(method_exists($instance, $action)) {
+            $instance->mModule = $module;
             $instance->$action();
         } else {
             header("HTTP 1.0 404 Not Found");
