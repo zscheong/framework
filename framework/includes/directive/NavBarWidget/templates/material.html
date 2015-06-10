@@ -1,0 +1,17 @@
+<div class="template-container type-material container-fluid">
+    <div class='row'>
+        <div class='col-sm-1'>
+            <button type='button' class='navbar-toggle'>
+                <span class='icon-bar'></span> 
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+        </div>
+        <div class='col-sm-2 app-brand' ng-show='settings.enableBrand'></div>
+        <div class='col-sm-2 app-title' ng-show='settings.enableTitle'></div>
+        <div class='col-sm-5 app-search' ng-show='settings.enableSearch'>
+            {{settings.title}}
+        </div>
+    </div>
+    <div class="tab-content" ng-transclude></div>
+</div>

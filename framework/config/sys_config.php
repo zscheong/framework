@@ -7,7 +7,8 @@ if(!defined("_APP_ENTRY_")) {
 
 $sys_config = array();
 $sys_config["doc_dir"] = __DIR__ . "/../";
-$sys_config['url_include'] = '../../../';
+$sys_config['base_url'] = 'http://localhost:81/project/framework/framework/';
+//$sys_config['url_include'] = '../../../';
 $sys_config['base_request_uri'] = '/project/framework/framework/';
 
 //define database
