@@ -15,6 +15,18 @@ class CArrayUtilsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('123', $hash['invoice']);
         $this->assertEquals('false', $hash['status']);
     }
+    
+    public function testIsArrayEmpty()
+    {
+        $empty_array = array(array(array()), array());
+        $non_empty_array = array(array(true, false), array());
+        
+        $status_empty_array = \includes\php\CArrayUtils::isArrayEmpty($empty_array);
+        $status_non_empty_array = \includes\php\CArrayUtils::isArrayEmpty($non_empty_array);
+        
+        $this->assertEquals(true, $status_empty_array);
+        $this->assertEquals(false, $status_non_empty_array);
+    }
 }
 
 ?>

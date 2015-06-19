@@ -21,6 +21,25 @@ class CArrayUtils
         }
         return $ret;
     }
+    public static function isArrayEmpty($array)
+    {
+        $status = true;
+        if(is_array($array)) {
+            foreach($array as $a) {
+                if(is_array($a)) {
+                    $temp = self::isArrayEmpty($a);
+                    if(!$temp) { return false; }
+                } else {
+                    if(!empty($a)) {
+                        return false;
+                    }
+                }
+            }
+        } else {
+            $status = empty($array);
+        }
+        return $status;
+    }
 }
 
 ?>
